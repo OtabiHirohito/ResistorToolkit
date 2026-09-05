@@ -1,0 +1,96 @@
+/* Styles that only the network-solver tool needs.
+   Colors/fonts reuse the shared variables from base.css so it matches
+   the other tabs instead of introducing a second color scheme. */
+
+.ns-panel{ margin-bottom:16px; }
+.ns-panel > label{
+  display:block;
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:.06em;
+  color:var(--muted);
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+.ns-field{ margin-bottom:14px; }
+.ns-field label{
+  display:block;
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:.06em;
+  color:var(--muted);
+  text-transform:uppercase;
+  margin-bottom:6px;
+}
+.ns-field-btn{ display:flex; align-items:flex-end; }
+
+.ns-row{ display:flex; gap:12px; flex-wrap:wrap; }
+.ns-row > .ns-field{ flex:1; min-width:160px; }
+
+.ns-input{
+  width:100%;
+  background:var(--pcb);
+  border:1px solid var(--panel-line);
+  border-radius:8px;
+  color:var(--cream);
+  font-family:var(--font-mono);
+  font-size:14px;
+  padding:10px 12px;
+  outline:none;
+  transition:border-color .15s;
+}
+.ns-input:focus{ border-color:var(--copper); }
+textarea.ns-input{ resize:vertical; min-height:64px; }
+
+.ns-hint{ font-size:12px; color:var(--muted); margin-top:6px; }
+
+#ns-calcBtn{
+  appearance:none; border:none; cursor:pointer;
+  background:var(--copper); color:#1a1305; font-weight:700;
+  font-family:var(--font-sans); font-size:14px; padding:11px 20px;
+  border-radius:8px; letter-spacing:.02em;
+  transition:transform .1s, background .15s;
+}
+#ns-calcBtn:hover{ background:var(--copper-light); }
+#ns-calcBtn:active{ transform:scale(0.98); }
+#ns-calcBtn:disabled{ background:var(--panel-line); color:var(--muted); cursor:not-allowed; }
+
+.ns-status{
+  font-family:var(--font-mono); font-size:12px; color:var(--muted);
+  margin-top:10px; min-height:16px;
+}
+.ns-status.err{ color:#e0603f; }
+
+.ns-results{ margin-top:6px; }
+.ns-result-item{
+  display:flex; flex-direction:column; align-items:stretch; gap:0;
+  padding:14px 16px; border-radius:8px; margin-bottom:8px;
+  background:var(--pcb); border:1px solid var(--panel-line);
+}
+.ns-result-item.best{ border-color:var(--lcd-text); box-shadow:0 0 0 1px rgba(120,224,127,0.25); }
+
+.ns-rtop{ display:flex; align-items:center; gap:14px; }
+.ns-rank{ font-family:var(--font-mono); font-size:11px; color:var(--muted); width:22px; flex-shrink:0; }
+.ns-result-item.best .ns-rank{ color:var(--lcd-text); }
+.ns-rmain{ flex:1; min-width:0; }
+.ns-rval{ font-family:var(--font-mono); font-size:17px; font-weight:700; color:var(--cream); }
+.ns-result-item.best .ns-rval{ color:var(--lcd-text); }
+.ns-rerr{ font-family:var(--font-mono); font-size:12px; color:var(--copper-light); text-align:right; flex-shrink:0; white-space:nowrap; }
+.ns-rexpr{ font-family:var(--font-mono); font-size:12px; color:var(--muted); margin-top:6px; word-break:break-all; }
+.ns-rdiagram{ margin-top:10px; background:var(--bg); border:1px solid var(--panel-line); border-radius:6px; padding:6px 4px; overflow-x:auto; }
+.ns-rdiagram svg{ display:block; margin:0 auto; max-width:100%; height:auto; }
+
+.ns-wire{ stroke:var(--lcd-text); stroke-width:2; fill:none; stroke-linecap:round; }
+.ns-rbox{ fill:var(--bg); stroke:var(--copper); stroke-width:2; }
+.ns-rlabel{ fill:var(--muted); font-family:var(--font-mono); font-size:9px; }
+
+.ns-badge{
+  display:inline-block; font-family:var(--font-mono); font-size:10px;
+  background:rgba(120,224,127,0.12); color:var(--lcd-text);
+  border:1px solid var(--lcd-dim); border-radius:4px; padding:2px 6px;
+  margin-left:6px;
+}
+
+.ns-footer{ margin-top:22px; font-size:12px; color:var(--muted); }
+.ns-footer code{ font-family:var(--font-mono); color:var(--copper-light); }

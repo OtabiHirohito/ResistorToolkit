@@ -1,0 +1,186 @@
+/* ===== design tokens (shared by every tool) ===== */
+:root{
+  --bg: #12140f;
+  --panel: #1b1f16;
+  --panel-line: #2c3324;
+  --pcb: #23291c;
+  --copper: #c9863f;
+  --copper-light: #f0b876;
+  --cream: #eee6d6;
+  --muted: #8d9581;
+  --lcd-bg: #0a150c;
+  --lcd-text: #78e07f;
+  --lcd-dim: #2f6a38;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-sans: 'IBM Plex Sans JP', sans-serif;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:
+    radial-gradient(1200px 600px at 15% -10%, #1c2216 0%, transparent 60%),
+    var(--bg);
+  color:var(--cream);
+  font-family:var(--font-sans);
+  min-height:100vh;
+  padding:28px 20px 60px;
+}
+.wrap{
+  max-width:1180px;
+  margin:0 auto;
+}
+
+/* ===== top bar (tabs + lang switcher) ===== */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.top-bar .tabs {
+  margin-bottom: 0;
+}
+
+/* ===== header ===== */
+header.hero{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+  border-bottom:1px solid var(--panel-line);
+  padding-bottom:16px;
+  margin-bottom:20px;
+}
+header.hero h1{
+  font-family:var(--font-mono);
+  font-weight:700;
+  font-size:26px;
+  letter-spacing:0.5px;
+  margin:0;
+  color:var(--cream);
+}
+header.hero h1 span{color:var(--copper-light);}
+header.hero p{
+  margin:4px 0 0;
+  color:var(--muted);
+  font-size:13px;
+  font-family:var(--font-mono);
+}
+
+/* ===== tab bar (switches between tools) ===== */
+.tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.tabs button{
+  font-family:var(--font-mono);
+  font-size:13px;
+  padding:9px 16px;
+  border:1px solid var(--panel-line);
+  border-radius:8px;
+  background:var(--panel);
+  color:var(--muted);
+  cursor:pointer;
+  transition:all .15s ease;
+}
+.tabs button:hover{ color:var(--cream); border-color:var(--copper); }
+.tabs button.active{
+  background:var(--copper);
+  color:#1a1305;
+  font-weight:600;
+  border-color:var(--copper);
+}
+
+/* ===== language switch button (top right) ===== */
+.lang-switch {
+  display: inline-flex;
+  background: var(--panel);
+  border: 1px solid var(--panel-line);
+  border-radius: 8px;
+  padding: 3px;
+  margin-left: auto;
+}
+.lang-switch button {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.lang-switch button:hover {
+  color: var(--cream);
+}
+.lang-switch button.active {
+  background: var(--copper);
+  color: #1a1305;
+  font-weight: 600;
+}
+
+/* ===== generic reusable pieces every tool can use ===== */
+.toggle{
+  display:inline-flex;
+  background:var(--panel);
+  border:1px solid var(--panel-line);
+  border-radius:8px;
+  padding:3px;
+}
+.toggle button{
+  font-family:var(--font-mono);
+  font-size:13px;
+  padding:7px 16px;
+  border:none;
+  border-radius:6px;
+  background:transparent;
+  color:var(--muted);
+  cursor:pointer;
+  transition:all .15s ease;
+}
+.toggle button.active{
+  background:var(--copper);
+  color:#1a1305;
+  font-weight:600;
+}
+
+.panel{
+  background:var(--panel);
+  border:1px solid var(--panel-line);
+  border-radius:14px;
+  padding:18px;
+}
+
+#toolContainer{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+/* ===== global footer ===== */
+.app-footer {
+  margin-top: 36px;
+  padding-top: 18px;
+  border-top: 1px solid var(--panel-line);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+.app-footer a {
+  color: var(--copper-light);
+  text-decoration: none;
+}
+.app-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 860px){
+  .tabs{ gap:6px; }
+  .top-bar{ flex-direction: row; }
+}

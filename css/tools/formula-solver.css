@@ -1,0 +1,180 @@
+/* Styles for Formula Solver Tool */
+
+.fs-panel {
+  margin-bottom: 16px;
+}
+
+.fs-field label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .06em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.fs-input-row {
+  display: flex;
+  gap: 12px;
+}
+
+.fs-input {
+  flex: 1;
+  background: var(--pcb);
+  border: 1px solid var(--panel-line);
+  border-radius: 8px;
+  color: var(--cream);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color .15s;
+}
+
+.fs-input:focus {
+  border-color: var(--copper);
+}
+
+#fs-calcBtn {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  background: var(--copper);
+  color: #1a1305;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  letter-spacing: .02em;
+  transition: transform .1s, background .15s;
+  white-space: nowrap;
+}
+
+#fs-calcBtn:hover {
+  background: var(--copper-light);
+}
+
+#fs-calcBtn:active {
+  transform: scale(0.98);
+}
+
+.fs-samples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.fs-chip {
+  appearance: none;
+  border: 1px solid var(--panel-line);
+  background: var(--pcb);
+  color: var(--copper-light);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+
+.fs-chip:hover {
+  border-color: var(--copper);
+  background: var(--panel-line);
+  color: var(--cream);
+}
+
+.fs-status {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 10px;
+  min-height: 16px;
+}
+
+.fs-status.err {
+  color: #e0603f;
+}
+
+/* LCD Panel */
+.fs-lcd {
+  background: var(--lcd-bg);
+  border: 1px solid var(--lcd-dim);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  font-family: var(--font-mono);
+  margin-bottom: 16px;
+}
+
+.fs-lcd-title {
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.fs-lcd-value {
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--lcd-text);
+  text-shadow: 0 0 12px rgba(120, 224, 127, 0.35);
+  margin: 4px 0;
+}
+
+/* Circuit Diagram Panel */
+.fs-diagram-panel {
+  margin-bottom: 16px;
+}
+
+.fs-diagram-header h2 {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: var(--cream);
+  margin: 0 0 4px 0;
+}
+
+.fs-diagram-note {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0 0 14px 0;
+}
+
+.fs-diagram-svg {
+  background: var(--bg);
+  border: 1px solid var(--panel-line);
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  text-align: center;
+  -webkit-overflow-scrolling: touch;
+}
+
+.fs-diagram-svg svg {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.fs-wire {
+  stroke: var(--lcd-text);
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+}
+
+.fs-rbox {
+  fill: var(--bg);
+  stroke: var(--copper);
+  stroke-width: 2;
+}
+
+.fs-rlabel {
+  fill: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 9px;
+}
